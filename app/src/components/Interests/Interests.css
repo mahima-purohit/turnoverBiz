@@ -1,0 +1,10 @@
+.categoryHeading {
+  font-weight: lighter;
+}
+.interestCheckbox {
+  display: flex;
+}
+.interests {
+  display: flex;
+  flex-direction: column;
+}

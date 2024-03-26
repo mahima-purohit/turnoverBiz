@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  color: #000;
+  padding: 10px 20px;
+  margin: 0px;
+}
+
+.logo {
+  flex: 1;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.navMenu {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.rightSection {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.helpOrder {
+  font-size: 12px;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.icons {
+  display: flex;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.banner {
+  text-align: center;
+  background-color: lightgray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
