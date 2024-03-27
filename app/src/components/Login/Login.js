@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Header from "../Header/Header";
+import { api_base_url } from "../../config";
 
 const Login = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,7 +25,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/turnoverBiz/users/login",
+      const response = await axios.post(`${api_base_url}/turnoverBiz/users/login`,
         {
           email: loginFormData.email,
           password: loginFormData.password

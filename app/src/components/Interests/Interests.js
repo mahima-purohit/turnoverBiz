@@ -7,6 +7,7 @@ import Checkbox from "@mui/material/Checkbox";
 import axios from "axios";
 import Header from "../Header/Header";
 import "./Interests.css"
+import { api_base_url } from "../../config";
 const Interests = () => {
     const token = localStorage.getItem('token');
     const [interests, setInterests] = useState([]);
@@ -19,7 +20,7 @@ const Interests = () => {
 
     const fetchInterests = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/turnoverBiz/interests",
+            const response = await axios.get(`${api_base_url}/turnoverBiz/interests`,
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -35,7 +36,7 @@ const Interests = () => {
     }
     const addInterest = async (interest) => {
         try {
-            await axios.post("http://localhost:8000/turnoverBiz/user/interests",
+            await axios.post(`${api_base_url}/turnoverBiz/user/interests`,
                 { interest: interest },
                 {
                     headers: {
@@ -51,7 +52,7 @@ const Interests = () => {
 
     const removeInterest = async (interest) => {
         try {
-            await axios.delete(`http://localhost:8000/turnoverBiz/user/interests/${interest}`,
+            await axios.delete(`${api_base_url}/turnoverBiz/user/interests/${interest}`,
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`

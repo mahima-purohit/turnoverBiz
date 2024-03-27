@@ -9,6 +9,7 @@ import "./Register.css";
 import { useSnackbar } from "notistack";
 import Alert from '@mui/material/Alert';
 import Header from "../Header/Header";
+import { api_base_url } from "../../config";
 
 function Register() {
   const [verificationWindow, setVerificationWindow] = useState(false);
@@ -39,7 +40,8 @@ function Register() {
  */
   const register = async (formData) => {
     try {
-      const response = await axios.post("http://localhost:8000/turnoverBiz/users/register", { name: formData.name, email: formData.email, password: formData.password })
+      const response = await axios.post(`${api_base_url}/turnoverBiz/users/register`,
+        { name: formData.name, email: formData.email, password: formData.password });
       console.log("response", response.data);
       if (response.status === 201) {
         setBannerValue({

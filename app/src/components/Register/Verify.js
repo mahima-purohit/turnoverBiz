@@ -9,13 +9,14 @@ import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../Header/Header";
+import { api_base_url } from "../../config";
 
 const Verify = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [verificationCode, setVerificationCode] = useState("");
     // base url can be moved to environment file 
-    const verifyApiEndPoint = "http://localhost:8000/turnoverBiz/users/verify"
+    const verifyApiEndPoint = `${api_base_url}/turnoverBiz/users/verify`;
     const email = location.state ? location.state.email : null;
     const handleVerificationInputChange = (value) => {
         setVerificationCode(value);
